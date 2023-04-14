@@ -22,4 +22,37 @@ ul, ol {
   padding: 0;
   list-style: none;
 }
+
+table {
+  border-collapse: collapse;
+  border: 1px solid gray;
+  
+  
+}
+
+td, th {
+  border: 1px solid gray;
+  padding: 10px 20px;
+}
+
+th {
+  background-color: #499579;
+}
+
+td {
+  text-align: center;
+}
+
+tr:nth-child(even) td {
+  background-color: white;
+}
+
+tr:nth-child(odd) td {
+  background-color: rgb(245,245,245);
+}
+
+caption {
+  padding: 10px;
+}
 `;
+

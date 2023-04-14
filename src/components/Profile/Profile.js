@@ -6,7 +6,7 @@ export const Profile = ({ item: {
 } }) => {
     return (
       <List>
-        <img src={avatar} alt={username} width="60" />
+        <img src={avatar} alt={username} width="60"  />
         <Name>{username}</Name>
         <Text>@{tag}</Text>
         <Text>{location}</Text>

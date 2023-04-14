@@ -1,38 +1,26 @@
+import { StatList } from "components/StatList/StatList";
 import PropTypes from 'prop-types';
+import { ListWrap } from "./Statistics.styled";
 
-export const Statistics = ({
-    item: {
-        id, label, percentage
-    } }) => {
+export const Statistics = ({ items, title }) => {
     return (
-      <section class="statistics">
-        <h2 class="title">Upload stats</h2>
-
-        <ul class="stat-list">
-          <li class="item">
-            <span class="label">{label}</span>
-            <span class="percentage">{percentage}%</span>
-          </li>
-          <li class="item">
-            <span class="label">{label}</span>
-            <span class="percentage">{percentage}%</span>
-          </li>
-          <li class="item">
-            <span class="label">{label}</span>
-            <span class="percentage">{percentage}%</span>
-          </li>
-          <li class="item">
-            <span class="label">{label}</span>
-            <span class="percentage">{percentage}%</span>
-          </li>
-        </ul>
-      </section>
+      <div>
+        {title && <h2> {title}</h2>}
+        <ListWrap>
+          {items.map(item => (
+            <li key={item.id}>
+              <StatList item={item} />
+            </li>
+          ))}
+        </ListWrap>
+      </div>
     );
-    }
+};
 
 Statistics.propTypes = {
-    item: PropTypes.shape({
-        
-    })
-}
-
+    items: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.string.isRequired,
+        })
+    ).isRequired,
+};
